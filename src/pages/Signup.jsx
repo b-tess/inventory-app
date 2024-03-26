@@ -8,15 +8,19 @@ function Signup() {
     const navigate = useNavigate()
 
     async function createNewUser(userObj) {
-        await fetch('https://inventory-app-izxl.onrender.com/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userObj),
-        })
-
-        localStorage.clear()
+        try {
+            await fetch('https://inventory-app-izxl.onrender.com/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userObj),
+            })
+    
+            localStorage.clear()
+        } catch (error) {
+            console.log(error)
+        }      
     }
 
     const handleClick = () => {
