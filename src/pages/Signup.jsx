@@ -8,7 +8,7 @@ function Signup() {
     const navigate = useNavigate()
 
     async function createNewUser(userObj) {
-        await fetch('http://localhost:3000/users', {
+        await fetch('https://inventory-app-izxl.onrender.com/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
